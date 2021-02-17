@@ -1,0 +1,23 @@
+=======================================================================
+Install Debian 10 (buster) on rastberry pi 
+=======================================================================
+
+1. Manual https://community.home-assistant.io/t/installing-home-assistant-supervised-on-a-raspberry-pi-with-debian-10/247116
+2. https://raspi.debian.net/tested-images/ качаем образ
+3. записываем на SD карту
+4. запускаем с raspberry pi 400 или raspberry pi 4B
+5. install sudo apt install sudo
+6. adduser YOUR_USERNAME
+7. usermod -aG sudo YOUR_USERNAME
+8. sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+
+=======================================================================
+Install home assistant 
+=======================================================================
+
+1) sudo apt-get install  -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
+2) systemctl disable ModemManager
+3) systemctl stop ModemManager
+4) curl -fsSL get.docker.com | sh
+5) curl -sL "https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh" | bash -s -- -m raspberrypi4
