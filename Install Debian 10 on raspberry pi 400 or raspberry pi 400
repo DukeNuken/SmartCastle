@@ -5,17 +5,19 @@ Install Debian 10 (buster) on rastberry pi
 1. Manual https://community.home-assistant.io/t/installing-home-assistant-supervised-on-a-raspberry-pi-with-debian-10/247116
 2. https://raspi.debian.net/tested-images/ качаем образ
 3. записываем на SD карту
-4. запускаем с raspberry pi 400 или raspberry pi 4B
-5. install sudo apt install sudo
-6. adduser YOUR_USERNAME
-7. usermod -aG sudo YOUR_USERNAME
-8. sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-
+4. устанавливаем карту в raspberry pi 400(4B), подключаем HDMI mini, клавиатуру, питание 
+5. логинимся как root
+6. обновляем пакеты "apt update"
+7. устанавливаем обновления "apt upgrade"
+5. устанавливаем sudo "apt install sudo"
+6. создаем новый аккаунт "adduser YOUR_USERNAME"
+7. добавляем его в группу администраторов "usermod -aG sudo YOUR_USERNAME"
+8. проверям ip address "ip addr"
+9. Конектимся через ssh через утилиту putty
 
 =======================================================================
 Install home assistant 
 =======================================================================
-
 1) sudo apt-get install  -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
 2) systemctl disable ModemManager
 3) systemctl stop ModemManager
