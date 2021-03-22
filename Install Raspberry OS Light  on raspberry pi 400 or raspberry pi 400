@@ -1,1 +1,30 @@
 
+=======================================================================
+Install Rstberry OS Light on rastberry pi 
+=======================================================================
+
+1. Download Raspberry Pi Imager https://www.raspberrypi.org/software/
+2. Open Raspberry Pi Imager -> menu Raspberry Pi OS (others) -> Raspberry Pi OS Lite (32-bit)
+3. записываем на SD карту
+4. устанавливаем карту в raspberry pi 400(4B), подключаем HDMI mini, клавиатуру, питание 
+5. логинимся как root
+6. обновляем пакеты "sudo apt update"
+7. устанавливаем обновления "sudo apt upgrade"
+8. обновляем прошивку устройства "sudo rpi-upgrade"
+6. создаем новый аккаунт "adduser YOUR_USERNAME"
+7. добавляем его в группу администраторов "usermod -aG sudo YOUR_USERNAME"
+
+8. sudo apt-get install -y network-manager
+
+
+8. проверям ip address "ip addr"
+9. Конектимся через ssh через утилиту putty
+
+=======================================================================
+Install home assistant 
+=======================================================================
+1) sudo apt-get install -y bash curl git jq avahi-daemon dbus apparmor-utils libavahi-compat-libdnssd-dev libatlas3-base apt-transport-https ca-certificates socat software-properties-common ftpd mc 
+2) sudo systemctl disable ModemManager
+3) sudo systemctl stop ModemManager
+4) curl -fsSL get.docker.com | sudo sh
+5) curl -sL "https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh" | sudo bash -s -- -m raspberrypi4
